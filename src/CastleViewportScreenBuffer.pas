@@ -46,7 +46,7 @@ begin
   CurrentViewportScreenBuffer := Self;
   Self.Flip := Self.Flip mod 2;
   Self.ReconstructBuffer(Self.Flip);
-  // Bind previous color buffer to 15
+  // Bind previous color buffer to FPreviousScreenTextureUnit
   glActiveTexture(GL_TEXTURE0 + Self.FPreviousScreenTextureUnit);
   glBindTexture(GL_TEXTURE_2D, Self.FImages[Self.Flip mod 2].Texture);
   //
