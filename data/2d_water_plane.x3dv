@@ -19,7 +19,7 @@ Transform {
         initializeOnly SFFloat waveStrength 0.02
         initializeOnly SFFloat waveStrengthNormal 0.1
         initializeOnly SFFloat waveStrengthRelect 0.01
-        initializeOnly SFFloat waveStrengthRefract 0.005
+        initializeOnly SFFloat waveStrengthRefract 0.0025
         initializeOnly SFFloat zoom 0.005
         initializeOnly SFFloat range 30
         initializeOnly SFFloat fadeNormal 2
