@@ -59,17 +59,22 @@ begin
 end;
 
 constructor TCastleViewportScreenBuffer.Create(AOwner: TComponent);
+var
+  I: Integer;
 begin
   inherited;
-  Self.FImages[0] := nil;
-  Self.FImages[1] := nil;
-  Self.FImages[2] := nil;
+  for I := 0 to 2 do
+    Self.FImages[I] := nil;
   Self.Flip := 0;
   Self.FPreviousScreenTextureUnit := 15;
 end;
 
 destructor TCastleViewportScreenBuffer.Destroy;
+var
+  I: Integer;
 begin
+  for I := 0 to 2 do
+    FreeAndNil(Self.FImages[I]);
   inherited;
 end;
 
