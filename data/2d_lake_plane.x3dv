@@ -15,18 +15,18 @@ Transform {
         initializeOnly SFNode texWaterDUDV ImageTexture { url "waterdudv.png" }
         initializeOnly SFInt32 texPreviousScreen 15
         initializeOnly SFInt32 texCurrentScreen 7
-        initializeOnly SFFloat speed 0.08
-        initializeOnly SFFloat waveStrength 0.02
+        initializeOnly SFFloat speed 0.05
+        initializeOnly SFFloat waveStrength 0.005
         initializeOnly SFFloat waveStrengthNormal 0.1
         initializeOnly SFFloat waveStrengthRelect 0.01
-        initializeOnly SFFloat waveStrengthRefract 0.0025
-        initializeOnly SFFloat zoom 0.005
-        initializeOnly SFFloat range 40
-        initializeOnly SFFloat fadeNormal 2
+        initializeOnly SFFloat waveStrengthRefract 0.005
+        initializeOnly SFFloat zoom 0.001
+        initializeOnly SFFloat range 30
+        initializeOnly SFFloat fadeNormal 0.01
         initializeOnly SFFloat fadeDeep 0.2
         initializeOnly SFFloat fadeReflect 4.0
         initializeOnly SFFloat fadeRefract 0.2
-        initializeOnly SFFloat foamThickness 0.06
+        initializeOnly SFFloat foamThickness 0.006
         initializeOnly SFVec3f colorWater 0.7 0.7 0.9
         initializeOnly SFVec3f colorFoam 0.7 0.7 0.7
         inputOnly SFTime time
