@@ -49,7 +49,8 @@ void main() {
   vec2 rd1 = texture2D(texWaterDUDV, vec2(coord.x + spd, coord.y)).xy;
   vec2 rd2 = texture2D(texWaterDUDV, vec2(-coord.x + spd, coord.y + spd)).xy;
   vec2 rd3 = rd1 + rd2;
-  vec3 reflectColor = texture2D(texPreviousScreen, clamp(reflectCoord + rd3 * waveStrengthRelect, 0.0, 1.0)).xyz;
+  vec2 reflectCoordFinal = clamp(reflectCoord + rd3 * waveStrengthRelect, 0.0, 1.0);
+  vec3 reflectColor = mix(colorWater, texture2D(texPreviousScreen, reflectCoordFinal).xyz, pow(1.0 - reflectCoordFinal.y, 0.25));
   vec3 refractColor = texture2D(texCurrentScreen, clamp(refractCoord + rd3 * waveStrengthRefract, 0.0, 1.0)).xyz;
 
   vec3 colorDefault = mix(colorWater * pow(fragTexcoord.y, fadeDeep), reflectColor, pow(fragTexcoord.y, fadeReflect));
