@@ -59,7 +59,7 @@ void main() {
 
   float wave = rd3.x * waveStrength;
   float nearSurface = clamp((1.0 - coord.y) + wave, 0.0, 1.0);
-  color += max(sign(foamThickness * 2.0 - nearSurface), 0.0) * mix(vec4(0.0), colorFoam, clamp(norm(coord.y, 1.0 - foamThickness * 0.5 - wave, 1.0), 0.0, 1.0));
+  color += max(sign(foamThickness * 2.0 - nearSurface), 0.0) * mix(vec3(0.0), colorFoam, clamp(norm(coord.y, 1.0 - foamThickness * 0.5 - wave, 1.0), 0.0, 1.0));
 
   gl_FragColor = max(sign(nearSurface - wave * 2.0), 0.0) * vec4(mix(color, refractColor, fadeRefract), 1.0);
 }
